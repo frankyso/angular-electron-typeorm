@@ -1,0 +1,63 @@
+{
+  "appId": "com.mokumoni.mansu",
+  "productName": "Mokumoni Mansu",
+  "copyright": "Copyright 2019 Laradox.com",
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "https://mansu.laradox.com/releases/"
+    }
+  ],
+  "nsis": {
+    "perMachine": true,
+    "runAfterFinish": false,
+    "artifactName": "${name}-${version}-${os}-${arch}.${ext}"
+  },
+  "portable": {
+    "artifactName": "${name}-${version}-${os}-${arch}-portable.${ext}"
+  },
+  "directories": {
+    "output": "release/"
+  },
+  "files": [
+    "**/*",
+    "!**/*.ts",
+    "!*.code-workspace",
+    "!LICENSE.md",
+    "!package.json",
+    "!package-lock.json",
+    "!src/",
+    "!e2e/",
+    "!hooks/",
+    "!angular.json",
+    "!_config.yml",
+    "!karma.conf.js",
+    "!tsconfig.json",
+    "!tslint.json"
+  ],
+  "win": {
+    "icon": "dist",
+    "target": [
+      "portable",
+      {
+        "target": "nsis",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
+    ]
+  },
+  "mac": {
+    "icon": "dist",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist",
+    "target": [
+      "AppImage"
+    ]
+  }
+}

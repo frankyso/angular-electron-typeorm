@@ -1,0 +1,40 @@
+<div class="mansu-window">
+    <div class="toolbar">
+        <div class="draggable-section"></div>
+        <div class="window-buttons">
+            <div class="wb__item minimize" (click)="minimize()">
+                <mat-icon>remove</mat-icon>
+            </div>
+            <div class="wb__item restore" (click)="maximize()">
+                <mat-icon>crop_square</mat-icon>
+            </div>
+            <div class="wb__item close" (click)="close()">
+                <mat-icon>close</mat-icon>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-menu">
+            <div class="profile"></div>
+            <div class="menu-icons">
+                <div routerLink="/letter" routerLinkActive="selected" class="menu-icons__item"
+                    matTooltip="Surat Keluar & Surat Masuk" matTooltipPosition="after">
+                    <mat-icon>mail</mat-icon>
+                </div>
+                <div class="menu-icons__item" matTooltip="Laporan Surat" matTooltipPosition="after">
+                    <mat-icon>archive</mat-icon>
+                </div>
+                <div class="menu-icons__item" matTooltip="Gallery Dokumen" matTooltipPosition="after">
+                    <mat-icon>folder</mat-icon>
+                </div>
+                <div routerLink="/settings" routerLinkActive="selected" class="menu-icons__item" matTooltip="Pengaturan"
+                    matTooltipPosition="after">
+                    <mat-icon>settings</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
